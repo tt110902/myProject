@@ -1,0 +1,33 @@
+<title>Products</title>
+<h1>List of products</h1>
+<hr>
+<a href="/products/addProduct" class="btn btn-primary">Add new product <i class="fa fa-plus"></i></a>
+
+<br><br>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Supplier</th>
+        <th>Image</th>
+    </tr>
+    {{#each product3}}
+    <tr>
+        <td>{{{_id}}}</td>
+        <td>{{{name}}}</td>
+        <td>{{{price}}}</td>
+        <td>{{{description}}}</td>
+        <td>{{{supplier}}}</td>
+        <td><img width="50px" src="/uploads/{{{img}}}" alt=""></td>
+        <td><a href="/products/update?id={{{_id}}}"> <i class="fa fa-pen"></i> </a>
+            <a href="/products/view?id={{{_id}}}"> <i class="fa fa-eye"></i> </a>
+            <a href="/products/delete?id={{{_id}}}&img={{{img}}}" onclick="return confirm('Are you sure')"> <i
+                    class="fa fa-trash"></i> </a>
+        </td>
+
+    </tr>
+    {{/each}}
+</table>
